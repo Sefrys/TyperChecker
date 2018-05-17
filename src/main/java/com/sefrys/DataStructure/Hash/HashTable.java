@@ -40,6 +40,12 @@ public class HashTable extends HashCollection{
 
     }
 
+    /**
+     * Finds the LinkedList the value is under by its hash number. O(1) complexity.
+     * Followed by LinkedList iteration of up to 128 elements. O(n) complexity
+     * @param value - String value being looked up
+     * @return boolean value dependent on if the value was found.
+     */
     @Override
     public boolean lookup(String value) {
         int idx = hash(value, table.length);
