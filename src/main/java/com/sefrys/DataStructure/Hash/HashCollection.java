@@ -19,4 +19,5 @@ public abstract class HashCollection {
     }
 
     public abstract void add(String value);
+    public abstract void remove(String value);
 }
