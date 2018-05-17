@@ -85,7 +85,17 @@ public class SpellChecker extends HashTable implements SpellingChecker {
 
     @Override
     public List<String> letterReplacement(String value) {
-        return null;
+        List<String> suggestions = new ArrayList<>();
+        ArrayList<Character> characters = split(value);
+
+        for (char character = 97; character < 123; character++) {
+            for (int i = 0; i != value.length(); i++) {
+                ArrayList<Character> tempCharacters = new ArrayList<>(characters);
+                String replaced = replaceLetter(tempCharacters, i, character);
+                if (dictionary.lookup(replaced)) suggestions.add(replaced);
+            }
+        }
+        return suggestions;
     }
 
     @Override
