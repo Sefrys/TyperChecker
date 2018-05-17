@@ -4,6 +4,7 @@ import com.sefrys.DataStructure.Hash.HashCollection;
 import com.sefrys.DataStructure.Hash.HashTable;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
 
@@ -107,7 +108,17 @@ public class SpellChecker extends HashTable implements SpellingChecker {
 
     @Override
     public List<String> wordSplitter(String value) {
-        return null;
+        List<String> suggestions = new ArrayList<>();
+        ArrayList<Character> characters = split(value);
+
+        for (int i = 0; i != value.length(); i++) {
+            ArrayList<Character> tempCharacters = new ArrayList<>(characters);
+            String[] spaced = spaceSplit(tempCharacters, i);
+            if (dictionary.lookup(spaced[0]) && dictionary.lookup(spaced[1])) {
+                suggestions.addAll(Arrays.asList(spaced));
+            }
+        }
+        return suggestions;
     }
 
     /**
