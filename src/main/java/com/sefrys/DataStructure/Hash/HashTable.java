@@ -40,7 +40,13 @@ public class HashTable extends HashCollection{
 
     }
 
+    @Override
     public boolean lookup(String value) {
+        int idx = hash(value, table.length);
+        if (table[idx] == null) return false;
+        for (String s : table[idx]) {
+            if (s.equals(value)) return true;
+        }
         return false;
     }
 }
