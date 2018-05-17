@@ -79,6 +79,11 @@ public class SpellChecker extends HashTable implements SpellingChecker {
 
     }
 
+    /**
+     * Splits the string into individual characters
+     * @param value - word to split
+     * @return ArrayList of characters
+     */
     private ArrayList<Character> split(String value) {
         value = value.toLowerCase();
         ArrayList<Character> characters = new ArrayList<>();
