@@ -83,6 +83,13 @@ public class SpellChecker extends HashTable implements SpellingChecker {
         return suggestions;
     }
 
+    /**
+     * Replaces a letter in the word at each position, and
+     * for each modified word, checks if such mutated word exists in the dictionary.
+     * If it exists, add word to list of suggestions.
+     * @param value - word to replace letters in.
+     * @return - list of suggested similar words.
+     */
     @Override
     public List<String> letterReplacement(String value) {
         List<String> suggestions = new ArrayList<>();
