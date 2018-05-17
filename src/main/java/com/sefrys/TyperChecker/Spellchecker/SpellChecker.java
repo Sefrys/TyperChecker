@@ -45,7 +45,7 @@ public class SpellChecker extends HashTable implements SpellingChecker {
      * Inserts a character once at every position in the word, and
      * for each modified word, checks if such mutated word exists in the dictionary.
      * If it exists, add word to list of suggestions.
-     * @param value - word to insert letters int
+     * @param value - word to insert letters in
      * @return - list of suggested similar words.
      */
     @Override
@@ -63,6 +63,13 @@ public class SpellChecker extends HashTable implements SpellingChecker {
         return suggestions;
     }
 
+    /**
+     * Deletes a character once at every position in the word, and
+     * for each modified word, checks if such mutated word exists in the dictionary.
+     * If it exists, add word to list of suggestions.
+     * @param value - word to delete letters in.
+     * @return - list of suggested similar words.
+     */
     @Override
     public List<String> letterDeletion(String value) {
         List<String> suggestions = new ArrayList<>();
