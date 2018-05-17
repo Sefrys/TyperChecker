@@ -108,6 +108,11 @@ public class SpellChecker extends HashTable implements SpellingChecker {
         return rebuildWord(characters);
     }
 
+    private String deleteLetter(ArrayList<Character> characters, int position) {
+        characters.remove(position);
+        return rebuildWord(characters);
+    }
+
     /**
      * Splits the string into individual characters
      * @param value - word to split
