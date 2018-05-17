@@ -21,4 +21,17 @@ public abstract class HashCollection {
     public abstract void add(String value);
     public abstract void remove(String value);
     public abstract boolean lookup(String value);
+
+    protected int hash(String s, int tableSize) {
+        int hash = 0;
+
+        for (int i = 0; i < s.length(); ++i) {
+            hash *= 37;
+            hash += s.charAt(i);
+        }
+
+        hash %= tableSize;
+
+        return hash > 0 ? hash : Math.abs(-hash);
+    }
 }
