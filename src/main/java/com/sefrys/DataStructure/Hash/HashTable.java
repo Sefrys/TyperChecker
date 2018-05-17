@@ -12,6 +12,12 @@ public class HashTable extends HashCollection{
         super();
     }
 
+    /**
+     * Adds a String value to LinkedList on HashTable by value's hashed index
+     * If a LinkedList does not exist on index, create a new LinkedList, and then add.
+     * If the index's LinkedList size is greater than 128, rebuild the HashTable with double its size.
+     * @param value - the String value being added.
+     */
     @Override
     public void add(String value) {
         int idx = hash(value, table.length);
