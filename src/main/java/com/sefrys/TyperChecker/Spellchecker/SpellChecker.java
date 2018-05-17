@@ -48,6 +48,12 @@ public class SpellChecker extends HashTable implements SpellingChecker {
         return null;
     }
 
+    /**
+     * Swaps adjacent letters in a word.
+     * @param value - word to swap letters around in
+     * @param position - position at which the swap occurs
+     * @return - letter swapped String
+     */
     private String swapAdjacent(String value, int position) {
         value = value.toLowerCase();
         char[] chars = value.toCharArray();
