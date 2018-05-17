@@ -1,5 +1,6 @@
 package com.sefrys.TyperChecker.Spellchecker;
 
+import com.sefrys.DataStructure.Hash.HashCollection;
 import com.sefrys.DataStructure.Hash.HashTable;
 
 import java.util.List;
@@ -10,6 +11,9 @@ import java.util.Set;
  * Contact: sefrys@gmail.com
  */
 public class SpellChecker extends HashTable implements SpellingChecker {
+
+    private HashCollection dictionary;
+
     @Override
     public Set<String> gatherSuggestions(String value) {
         return null;
