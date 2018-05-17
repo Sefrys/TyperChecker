@@ -43,7 +43,17 @@ public class SpellChecker extends HashTable implements SpellingChecker {
 
     @Override
     public List<String> adjacentLetterInsert(String value) {
-        return null;
+        List<String> suggestions = new ArrayList<>();
+        ArrayList<Character> characters = split(value);
+
+        for (char character = 97; character < 123; character++) {
+            for (int i = 0; i != value.length() + 1; i++) {
+                ArrayList<Character> tempCharacters = new ArrayList<>(characters);
+                String inserted = insertAdjacent(tempCharacters, i, character);
+                if (dictionary.lookup(inserted)) suggestions.add(inserted);
+            }
+        }
+        return suggestions;
     }
 
     @Override
