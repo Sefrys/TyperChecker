@@ -3,10 +3,7 @@ package com.sefrys.TyperChecker.Spellchecker;
 import com.sefrys.DataStructure.Hash.HashCollection;
 import com.sefrys.DataStructure.Hash.HashTable;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Created by Ireneusz Zagan on 17.05.18, 21:34
@@ -22,7 +19,14 @@ public class SpellChecker extends HashTable implements SpellingChecker {
 
     @Override
     public Set<String> gatherSuggestions(String value) {
-        return null;
+        Set<String> suggestions = new HashSet<>() ;
+        suggestions.addAll(adjacentLetterSwap(value));
+        suggestions.addAll(adjacentLetterInsert(value));
+        suggestions.addAll(letterDeletion(value));
+        suggestions.addAll(letterReplacement(value));
+        suggestions.addAll(wordSplitter(value));
+
+        return suggestions;
     }
 
     /**
