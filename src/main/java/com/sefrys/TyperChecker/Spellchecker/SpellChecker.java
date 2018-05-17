@@ -134,6 +134,10 @@ public class SpellChecker extends HashTable implements SpellingChecker {
         return rebuildWord(characters);
     }
 
+    private String replaceLetter(ArrayList<Character> characters, int position, char character) {
+        characters.set(position, character);
+        return rebuildWord(characters);
+    }
     /**
      * Splits the string into individual characters
      * @param value - word to split
