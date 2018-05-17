@@ -17,4 +17,6 @@ public abstract class HashCollection {
         table = new LinkedList[INIT_SIZE];
         size = INIT_SIZE;
     }
+
+    public abstract void add(String value);
 }
