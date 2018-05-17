@@ -108,6 +108,12 @@ public class SpellChecker extends HashTable implements SpellingChecker {
         return rebuildWord(characters);
     }
 
+    /**
+     * Deletes a letter at a position in the word
+     * @param characters - ArrayList of characters
+     * @param position - index of the character to be deleted
+     * @return - String word with removed character
+     */
     private String deleteLetter(ArrayList<Character> characters, int position) {
         characters.remove(position);
         return rebuildWord(characters);
