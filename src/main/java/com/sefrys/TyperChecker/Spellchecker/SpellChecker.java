@@ -106,6 +106,13 @@ public class SpellChecker extends HashTable implements SpellingChecker {
         return suggestions;
     }
 
+    /**
+     * Splits the word at a certain position into a pair.
+     * If both of resulting words exist in the dictionary,
+     * add the words to list of suggestions
+     * @param value - word to split up
+     * @return - list of suggestions
+     */
     @Override
     public List<String> wordSplitter(String value) {
         List<String> suggestions = new ArrayList<>();
