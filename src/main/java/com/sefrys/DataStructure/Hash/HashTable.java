@@ -5,6 +5,11 @@ package com.sefrys.DataStructure.Hash;
  * Contact: sefrys@gmail.com
  */
 public class HashTable extends HashCollection{
+
+    public HashTable() {
+        super();
+    }
+
     public void add(String value) {
 
     }
