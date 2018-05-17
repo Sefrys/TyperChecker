@@ -24,6 +24,13 @@ public class SpellChecker extends HashTable implements SpellingChecker {
         return null;
     }
 
+    /**
+     * Swaps letters around in the word.
+     * For each swapped word, if such word exists in the dictionary,
+     * add the word to list of suggestions
+     * @param value - word to swap letters around in
+     * @return - list of suggested similar words.
+     */
     @Override
     public List<String> adjacentLetterSwap(String value) {
         List<String> suggestions = new ArrayList<>();
