@@ -78,4 +78,14 @@ public class SpellChecker extends HashTable implements SpellingChecker {
         return new String(chars);
 
     }
+
+    private ArrayList<Character> split(String value) {
+        value = value.toLowerCase();
+        ArrayList<Character> characters = new ArrayList<>();
+
+        for (int i = 0; i < value.length(); i++) {
+            characters.add(value.charAt(i));
+        }
+        return characters;
+    }
 }
