@@ -46,6 +46,11 @@ public abstract class HashCollection {
         return hash > 0 ? hash : Math.abs(-hash);
     }
 
+    /**
+     * Method is called only when the linked list size on any index is too big (>128)
+     * HashTable is remapped with double its previous size, to keep its fast linked list lookup
+     * @return rebuilt HashTable with double its previous size.
+     */
     protected LinkedList<String>[] rehashMap() {
         size *= 2;
 
