@@ -27,6 +27,11 @@ public class HashTable extends HashCollection{
         if (table[idx].size() > LINKED_LIST_SIZE) table = rehashMap();
     }
 
+    /**
+     * Removed a String value from LinkedList on HashTable by value's hashed index, and its value.
+     * If there is no LinkedList under the index, do nothing
+     * @param value - String value being removed.
+     */
     @Override
     public void remove(String value) {
         int idx = hash(value, table.length);
