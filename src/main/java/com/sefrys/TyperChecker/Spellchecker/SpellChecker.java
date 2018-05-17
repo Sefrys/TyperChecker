@@ -17,6 +17,12 @@ public class SpellChecker extends HashTable implements SpellingChecker {
         dictionary = map;
     }
 
+    /**
+     * Runs every spellchecker algorithm to find and
+     * combine a list of unique suggestions
+     * @param value - word to be checked
+     * @return - Set of unique suggestions
+     */
     @Override
     public Set<String> gatherSuggestions(String value) {
         Set<String> suggestions = new HashSet<>() ;
