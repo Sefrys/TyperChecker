@@ -93,4 +93,12 @@ public class SpellChecker extends HashTable implements SpellingChecker {
         }
         return characters;
     }
+
+    private String rebuildWord(ArrayList<Character> characters) {
+        StringBuilder sb = new StringBuilder();
+        for (Character s : characters) {
+            sb.append(s.toString());
+        }
+        return sb.toString();
+    }
 }
