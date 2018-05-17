@@ -3,6 +3,7 @@ package com.sefrys.TyperChecker.Spellchecker;
 import com.sefrys.DataStructure.Hash.HashCollection;
 import com.sefrys.DataStructure.Hash.HashTable;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
@@ -25,7 +26,12 @@ public class SpellChecker extends HashTable implements SpellingChecker {
 
     @Override
     public List<String> adjacentLetterSwap(String value) {
-        return null;
+        List<String> suggestions = new ArrayList<>();
+        for (int i = 0; i < value.length() - 1; i++) {
+            String swapped = swapAdjacent(value, i);
+            if (dictionary.lookup(swapped)) suggestions.add(swapped);
+        }
+        return suggestions;
     }
 
     @Override
