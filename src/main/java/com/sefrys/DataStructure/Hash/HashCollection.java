@@ -45,4 +45,19 @@ public abstract class HashCollection {
 
         return hash > 0 ? hash : Math.abs(-hash);
     }
+
+    protected LinkedList<String>[] rehashMap() {
+        size *= 2;
+
+        LinkedList<String>[] newTable = new LinkedList[size];
+
+        for (LinkedList<String> list : table) {
+            for (String value : list) {
+                int idx = hash(value, newTable.length);
+                if (newTable[idx] == null)  newTable[idx] = new LinkedList<String>();
+                newTable[idx].add(value);
+            }
+        }
+        return newTable;
+    }
 }
