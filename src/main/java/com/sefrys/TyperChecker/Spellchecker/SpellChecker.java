@@ -47,4 +47,16 @@ public class SpellChecker extends HashTable implements SpellingChecker {
     public List<String> wordSplitter(String value) {
         return null;
     }
+
+    private String swapAdjacent(String value, int position) {
+        value = value.toLowerCase();
+        char[] chars = value.toCharArray();
+
+        char tmp = chars[position];
+        chars[position] = chars[position + 1];
+        chars[position + 1] = tmp;
+
+        return new String(chars);
+
+    }
 }
