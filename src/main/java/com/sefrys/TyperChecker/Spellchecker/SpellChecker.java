@@ -14,6 +14,10 @@ public class SpellChecker extends HashTable implements SpellingChecker {
 
     private HashCollection dictionary;
 
+    public SpellChecker(HashTable map) {
+        dictionary = map;
+    }
+
     @Override
     public Set<String> gatherSuggestions(String value) {
         return null;
