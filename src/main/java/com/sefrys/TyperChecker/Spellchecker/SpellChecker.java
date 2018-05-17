@@ -162,6 +162,12 @@ public class SpellChecker extends HashTable implements SpellingChecker {
         characters.set(position, character);
         return rebuildWord(characters);
     }
+
+    private String[] spaceSplit(ArrayList<Character> characters, int position) {
+        characters.add(position, ' ');
+        return rebuildWord(characters).split(" ");
+    }
+
     /**
      * Splits the string into individual characters
      * @param value - word to split
