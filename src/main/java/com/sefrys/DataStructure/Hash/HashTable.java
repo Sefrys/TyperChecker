@@ -27,7 +27,11 @@ public class HashTable extends HashCollection{
         if (table[idx].size() > LINKED_LIST_SIZE) table = rehashMap();
     }
 
+    @Override
     public void remove(String value) {
+        int idx = hash(value, table.length);
+        if (table[idx] == null) return;
+        table[idx].remove(value);
 
     }
 
