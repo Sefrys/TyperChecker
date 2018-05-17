@@ -79,6 +79,11 @@ public class SpellChecker extends HashTable implements SpellingChecker {
 
     }
 
+    private String insertAdjacent(ArrayList<Character> characters, int position, char character) {
+        characters.add(position, character);
+        return rebuildWord(characters);
+    }
+
     /**
      * Splits the string into individual characters
      * @param value - word to split
