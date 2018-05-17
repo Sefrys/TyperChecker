@@ -94,6 +94,11 @@ public class SpellChecker extends HashTable implements SpellingChecker {
         return characters;
     }
 
+    /**
+     * Concatenates list of characters into a string
+     * @param characters - list of characters
+     * @return concatenated String
+     */
     private String rebuildWord(ArrayList<Character> characters) {
         StringBuilder sb = new StringBuilder();
         for (Character s : characters) {
