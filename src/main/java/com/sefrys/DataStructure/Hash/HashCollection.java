@@ -12,4 +12,9 @@ public abstract class HashCollection {
     protected final int INIT_SIZE = 128;
     protected final int LINKED_LIST_SIZE = 128;
     protected int size;
+
+    protected HashCollection() {
+        table = new LinkedList[INIT_SIZE];
+        size = INIT_SIZE;
+    }
 }
