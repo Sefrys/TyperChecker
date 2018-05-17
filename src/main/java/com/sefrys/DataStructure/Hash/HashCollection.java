@@ -22,6 +22,17 @@ public abstract class HashCollection {
     public abstract void remove(String value);
     public abstract boolean lookup(String value);
 
+    /**
+     * Hashes the string value into an integer value
+     * for HashTable indexing. High value modulo operation
+     * ensures significant int value varation between indices
+     * @param s is the string to hash
+     * @param tableSize is used for modulo operation to
+     *                  limit possible indices within table's
+     *                  index boundary
+     * @return the hashed value. In case of int overturn, the
+     * negative value is transformed into a positive.
+     */
     protected int hash(String s, int tableSize) {
         int hash = 0;
 
