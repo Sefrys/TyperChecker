@@ -79,6 +79,13 @@ public class SpellChecker extends HashTable implements SpellingChecker {
 
     }
 
+    /**
+     * Inserts a character into position in list of characters
+     * @param characters - ArrayList of characters
+     * @param position - index of the position the character is inserted at
+     * @param character - character inserted at position
+     * @return - String word with inserted character
+     */
     private String insertAdjacent(ArrayList<Character> characters, int position, char character) {
         characters.add(position, character);
         return rebuildWord(characters);
