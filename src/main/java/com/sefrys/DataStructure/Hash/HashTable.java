@@ -21,7 +21,7 @@ public class HashTable extends HashCollection{
     @Override
     public void add(String value) {
         int idx = hash(value, table.length);
-        if (table[idx] == null) table[idx] = new LinkedList<String>();
+        if (table[idx] == null) table[idx] = new LinkedList<>();
         table[idx].add(value);
 
         if (table[idx].size() > LINKED_LIST_SIZE) table = rehashMap();
@@ -35,9 +35,7 @@ public class HashTable extends HashCollection{
     @Override
     public void remove(String value) {
         int idx = hash(value, table.length);
-        if (table[idx] == null) return;
-        table[idx].remove(value);
-
+        if (table[idx] != null) table[idx].remove(value);
     }
 
     /**

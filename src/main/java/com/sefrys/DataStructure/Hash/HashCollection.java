@@ -59,7 +59,7 @@ public abstract class HashCollection {
         for (LinkedList<String> list : table) {
             for (String value : list) {
                 int idx = hash(value, newTable.length);
-                if (newTable[idx] == null)  newTable[idx] = new LinkedList<String>();
+                if (newTable[idx] == null)  newTable[idx] = new LinkedList<>();
                 newTable[idx].add(value);
             }
         }
